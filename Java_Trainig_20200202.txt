@@ -1,0 +1,40 @@
+Servlet config:
+	- Servlet config is created by web container and it is used to read parameters from web
+	- configuration available for each servlet independently in web.xml
+	- getServletConfig() from request object
+	
+Servlet Context:
+	- This is created by web container at the time deployment
+	- This is application specific not servlet specific
+	- getServletContext() used to get context object
+	
+Sessions in Servlet
+	- Session is time interval inside the application
+	- Session tracking/session management: the way of maintain user data inside the application.
+
+There 4 techniques to track or manage the session
+	- Cookies
+		Cookie a small piece of information which we gonna to store at client machine
+		There are two types cookies
+			- Persistent cookie: It is available for multiple requests and it won't bbe clear from the browser as soon you closes it.
+			- Non-Persistent cookie: It is available for single session and as soon closes the browser, it will clear from browser.
+		Limitation in cookie	
+			- less security because cookie stored in client machine i,e., browser
+			- If user disable the cookie setting in browser, session won't work
+	- Hidden from field
+		Writing extra HTML element which is having value from the server for session management.
+		
+		Limitation
+			-Less security because user can see the data in debug mode
+			- unused HTML components loaded to view hence page becomes heavy.
+	- URL Rewriting
+		It means appending the exttra token or parameter to the URL
+		Limitation
+			- Less security
+			- If get request has 255k data in URL then there is chance to loose data
+	- HttpSession
+		This session is maintained at server end
+		Advantage:
+			- It is more secure because session id are stored in server end
+			- We can set value in key value format and check value against key
+			
